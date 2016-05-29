@@ -1,0 +1,283 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/manual_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/manual_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:background="@color/light_black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/manual_intro"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:text="@string/manual_intro"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:typeface="monospace" />
+
+                <ImageView
+                    android:id="@+id/manual_reset"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/ic_settings_backup_restore_white_24dp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:id="@+id/framelayout_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/early_morning_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/early_morning_text"
+                    style="@style/TextViewCustom"
+                    />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_1">
+
+                <ImageView
+                    android:id="@+id/morning_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    />
+
+                <TextView
+                    android:id="@+id/morning_text"
+                    style="@style/TextViewCustom"
+                    />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_2">
+
+                <ImageView
+                    android:id="@+id/late_morning_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/late_morning_text"
+                    style="@style/TextViewCustom"
+                    />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_3">
+
+                <ImageView
+                    android:id="@+id/early_afternoon_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/early_afternoon_text"
+                    style="@style/TextViewCustom"
+                    />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_4">
+
+                <ImageView
+                    android:id="@+id/afternoon_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/afternoon_text"
+                    style="@style/TextViewCustom"
+                    />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_5">
+
+                <ImageView
+                    android:id="@+id/late_afternoon_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/late_afternoon_text"
+                    style="@style/TextViewCustom"
+                    />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_6">
+
+                <ImageView
+                    android:id="@+id/early_evening_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/early_evening_text"
+                    style="@style/TextViewCustom"
+                    />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_7">
+
+                <ImageView
+                    android:id="@+id/evening_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/evening_text"
+                    style="@style/TextViewCustom"
+                    />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_8">
+
+                <ImageView
+                    android:id="@+id/late_evening_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/late_evening_text"
+                    style="@style/TextViewCustom"
+                    />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_9">
+
+                <ImageView
+                    android:id="@+id/early_night_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+                <TextView
+                    android:id="@+id/early_night_text"
+                    style="@style/TextViewCustom"
+                    />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_10">
+
+                <ImageView
+                    android:id="@+id/night_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/night_text"
+                    style="@style/TextViewCustom"
+                    />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framelayout_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/framelayout_11">
+
+                <ImageView
+                    android:id="@+id/late_night_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:id="@+id/late_night_text"
+                    style="@style/TextViewCustom"
+                    />
+
+                </FrameLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

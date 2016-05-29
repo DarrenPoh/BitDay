@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/background_description"
+        android:scaleType="centerCrop" />
+
+    <!--    <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textOff="Disabled"
+            android:textOn="Activated"
+            android:typeface="monospace" />-->
+
+    <!--    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/switch1"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:checked="false"
+            android:padding="10dp"
+            android:typeface="monospace"
+            />-->
+
+    <LinearLayout
+        android:id="@+id/activate_button_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/activate_button"
+            style="@style/Theme.AppCompat.Light"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:typeface="monospace"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activate_button_layout"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent_white">
+
+        <Button
+            android:id="@+id/manualButton"
+            style="@style/Theme.AppCompat.Light"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="@string/set_manual"
+
+            android:typeface="monospace" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/bitday_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_info_outline_black_24dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark" />
+
+    <ImageView
+        android:id="@+id/bitday_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/activate_button_layout"
+        android:layout_below="@id/bitday_info"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"
+        android:padding="6dp"
+        android:src="@drawable/bitday_banner" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:typeface="monospace" />
+
+    <!--<TextView
+        android:id="@+id/footerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:text="@string/text_footer" />-->
+
+
+</RelativeLayout>
+

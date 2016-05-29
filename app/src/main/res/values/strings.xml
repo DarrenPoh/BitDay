@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BitDay</string>
+
+    <string name="text_footer">Wallpapers provided by BloodyMarvellous\nApp designed by cr5315 Application Industries</string>
+    <string name="background_description">Background</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bit_day_manual">BitDayManual</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="set_manual">Set Manual</string>
+
+    <string name="manual_intro">Select wallpaper and set time in 24 hour format. \nSet to 25 to remove wallpaper from cycle</string>
+
+</resources>
