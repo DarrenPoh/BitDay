@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
         android:background="@color/light_black" />
 
     <ScrollView
@@ -33,7 +34,8 @@
                     android:id="@+id/early_morning_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
                 <TextView
                     android:id="@+id/early_morning_text"
@@ -54,6 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
                     />
 
                 <TextView
@@ -74,7 +77,8 @@
                     android:id="@+id/late_morning_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/late_morning_text"
@@ -94,7 +98,8 @@
                     android:id="@+id/early_afternoon_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/early_afternoon_text"
@@ -114,7 +119,8 @@
                     android:id="@+id/afternoon_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/afternoon_text"
@@ -133,7 +139,8 @@
                     android:id="@+id/late_afternoon_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/late_afternoon_text"
@@ -152,7 +159,8 @@
                     android:id="@+id/early_evening_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/early_evening_text"
@@ -171,7 +179,8 @@
                     android:id="@+id/evening_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/evening_text"
@@ -190,7 +199,8 @@
                     android:id="@+id/late_evening_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/late_evening_text"
@@ -209,7 +219,8 @@
                     android:id="@+id/early_night_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
                 <TextView
                     android:id="@+id/early_night_text"
                     style="@style/TextViewCustom"
@@ -227,7 +238,8 @@
                     android:id="@+id/night_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/night_text"
@@ -246,7 +258,8 @@
                     android:id="@+id/late_night_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true" />
+                    android:adjustViewBounds="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless" />
 
                 <TextView
                     android:id="@+id/late_night_text"

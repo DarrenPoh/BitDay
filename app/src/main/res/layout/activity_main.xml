@@ -2,7 +2,8 @@
     xmlns:materialdesign="http://schemas.android.com/tools"
     android:id="@+id/layout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    >
 
     <ImageView
         android:id="@+id/background"
@@ -10,66 +11,45 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:contentDescription="@string/background_description"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        />
 
-    <!--    <ToggleButton
-            android:id="@+id/toggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:textOff="Disabled"
-            android:textOn="Activated"
-            android:typeface="monospace" />-->
 
-    <!--    <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/switch1"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:checked="false"
-            android:padding="10dp"
-            android:typeface="monospace"
-            />-->
 
-    <LinearLayout
-        android:id="@+id/activate_button_layout"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/activate_button"
+        style="@style/Theme.AppCompat.Light"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:typeface="monospace" />
 
-        <Button
-            android:id="@+id/activate_button"
-            style="@style/Theme.AppCompat.Light"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:typeface="monospace"
-            />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/manualButton"
+        style="@style/Theme.AppCompat.Light"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activate_button"
+        android:layout_centerHorizontal="true"
+        android:background="@color/ultraUltraLightGray"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="@string/set_manual"
+        android:typeface="monospace"
+        android:layout_marginBottom="10dp"/>
 
-    <LinearLayout
+    <ImageButton
+        android:id="@+id/rate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/activate_button_layout"
+        android:src="@drawable/thumbs_like"
+        android:layout_below="@id/manualButton"
         android:layout_centerHorizontal="true"
-        android:background="@color/ultraUltraLightGray">
-
-        <Button
-            android:id="@+id/manualButton"
-            style="@style/Theme.AppCompat.Light"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:text="@string/set_manual"
-
-            android:typeface="monospace" />
-
-    </LinearLayout>
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:background="#00FFFFFF"/>
 
     <ImageButton
         android:id="@+id/bitday_info"
@@ -86,7 +66,7 @@
         android:id="@+id/bitday_banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/activate_button_layout"
+        android:layout_above="@id/activate_button"
         android:layout_below="@id/bitday_info"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/app_name"
@@ -102,16 +82,6 @@
         android:gravity="center"
         android:paddingBottom="5dp"
         android:typeface="monospace" />
-
-    <!--<TextView
-        android:id="@+id/footerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:paddingBottom="6dp"
-        android:text="@string/text_footer" />-->
 
 
 </RelativeLayout>

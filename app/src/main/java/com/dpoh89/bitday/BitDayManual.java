@@ -15,6 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
@@ -56,7 +57,9 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setupWindowAnimations();
         setContentView(R.layout.activity_bit_day_manual);
+
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -693,6 +696,12 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
         early_night_text.setText(Integer.toString(preferences.getInt("early_night", 22)) + ":00");
         night_text.setText(Integer.toString(preferences.getInt("night", 0)) + ":00");
         late_night_text.setText(Integer.toString(preferences.getInt("late_night", 2)) + ":00");
+    }
+
+    private void setupWindowAnimations() {
+        Fade fade = new Fade();
+        fade.setDuration(1000);
+        getWindow().setEnterTransition(fade);
     }
 }
 

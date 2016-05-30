@@ -8,6 +8,7 @@ import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.app.WallpaperManager;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -18,9 +19,12 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.transition.Fade;
+import android.transition.TransitionInflater;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Display;
@@ -28,6 +32,7 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.WindowManager;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -37,6 +42,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.io.IOException;
@@ -46,20 +52,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private SharedPreferences.Editor editor;
     ImageView background;
     Button manualButton, activateButton;
+    ImageButton rateButton;
     Switch switchToggle;
-    LinearLayout activate_layout;
     SharedPreferences preferences;
     ObjectAnimator colorFadeIn, colorFadeOut;
+    Animation anim;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setupWindowAnimations();
         setContentView(R.layout.activity_main);
+
         overridePendingTransition(R.anim.slide_enter, R.anim.slide_exit);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         editor = preferences.edit();
-
-        activate_layout = (LinearLayout) findViewById(R.id.activate_button_layout);
 
         manualButton = (Button) findViewById(R.id.manualButton);
         manualButton.setOnClickListener(this);
@@ -67,24 +74,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
         activateButton = (Button) findViewById(R.id.activate_button);
         activateButton.setOnClickListener(this);
 
+        anim = AnimationUtils.loadAnimation(this, R.anim.scale);
+
+        rateButton = (ImageButton) findViewById(R.id.rate_button);
+        rateButton.setOnClickListener(this);
+
         background = (ImageView) findViewById(R.id.background);
         background.setImageResource(BitDayDrawable.get(this));
 
-        colorFadeOut = ObjectAnimator.ofObject(activate_layout, "backgroundColor", new ArgbEvaluator(), getResources().getColor(R.color.blue), getResources().getColor(R.color.lightRed_Pressed));
+        colorFadeOut = ObjectAnimator.ofObject(activateButton, "backgroundColor", new ArgbEvaluator(), getResources().getColor(R.color.blue), getResources().getColor(R.color.lightRed_Pressed));
         colorFadeOut.setDuration(500);
 
-        colorFadeIn = ObjectAnimator.ofObject(activate_layout, "backgroundColor", new ArgbEvaluator(), getResources().getColor(R.color.lightRed_Pressed), getResources().getColor(R.color.blue));
+        colorFadeIn = ObjectAnimator.ofObject(activateButton, "backgroundColor", new ArgbEvaluator(), getResources().getColor(R.color.lightRed_Pressed), getResources().getColor(R.color.blue));
         colorFadeIn.setDuration(500);
 
         if (preferences.getBoolean("isRunning", false)) {
             activateButton.setText("Activated");
-            activate_layout.setBackgroundColor(getResources().getColor(R.color.blue));
+            activateButton.setBackgroundColor(getResources().getColor(R.color.blue));
         } else {
             activateButton.setText("Disabled");
-            activate_layout.setBackgroundColor(getResources().getColor(R.color.lightRed_Pressed));
+            activateButton.setBackgroundColor(getResources().getColor(R.color.lightRed_Pressed));
         }
 
-        //background.startAnimation(animation);
 
         TextView textView = (TextView) findViewById(R.id.textView);
         String text = "BitDay Beta";
@@ -160,6 +171,30 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 editor.commit();
 
                 break;
+
+            case R.id.rate_button:
+
+                rateButton.startAnimation(anim);
+
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Do something
+                        Uri uri = Uri.parse("market://details?id=" + getPackageName());
+                        Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                        try {
+                            startActivity(myAppLinkToMarket);
+                        } catch (ActivityNotFoundException e) {
+                            Toast.makeText(getApplicationContext()," unable to find market app", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }, 300);
+
+
+
+
+            break;
         }
     }
 
@@ -202,8 +237,25 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        //background.setImageResource(BitDayDrawable.get(this));
     }
 
+/*    private void setupWindowAnimations() {
+*//*        Fade fade = TransitionInflater.from(this).inflateTransition(R.transition.fade);
+        getWindow().setEnterTransition(fade);*//*
+        Fade fade = new Fade();
+        fade.setDuration(1000);
+        getWindow().setEnterTransition(fade);
+        //getWindow().setEnterTransition(fade);
+        getWindow().setReturnTransition(fade);
+    }*/
+
+    private void setupWindowAnimations() {
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            //Log.i("ANIM", "Fade called");
+            Fade fade = new Fade(2);
+            fade.setDuration(1000);
+            getWindow().setExitTransition(fade);
+        }
+    }
 
 }
