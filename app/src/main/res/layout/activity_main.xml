@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/activate_button_layout"
         android:layout_centerHorizontal="true"
-        android:background="@color/transparent_white">
+        android:background="@color/ultraUltraLightGray">
 
         <Button
             android:id="@+id/manualButton"

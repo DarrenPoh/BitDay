@@ -52,10 +52,6 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
     AlertDialog.Builder builder;
     EditText input;
 
-/*    public BitDayManual(Activity activity) {
-        preferences = activity.getPreferences(Activity.MODE_PRIVATE);
-    }*/
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,26 +80,9 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
         night_text = (TextView) findViewById(R.id.night_text);
         late_night_text = (TextView) findViewById(R.id.late_night_text);
 
-        early_morning_text.setText(Integer.toString(preferences.getInt("early_morning", 5)) + ":00");
-        morning_text.setText(Integer.toString(preferences.getInt("morning", 6)) + ":00");
-        late_morning_text.setText(Integer.toString(preferences.getInt("late_morning", 8)) + ":00");
-
-        early_afternoon_text.setText(Integer.toString(preferences.getInt("early_afternoon", 10)) + ":00");
-        afternoon_text.setText(Integer.toString(preferences.getInt("afternoon", 12)) + ":00");
-        late_afternoon_text.setText(Integer.toString(preferences.getInt("late_afternoon", 14)) + ":00");
-
-        early_evening_text.setText(Integer.toString(preferences.getInt("early_evening", 17)) + ":00");
-        evening_text.setText(Integer.toString(preferences.getInt("evening", 19)) + ":00");
-        late_evening_text.setText(Integer.toString(preferences.getInt("late_evening", 20)) + ":00");
-
-        early_night_text.setText(Integer.toString(preferences.getInt("early_night", 22)) + ":00");
-        night_text.setText(Integer.toString(preferences.getInt("night", 0)) + ":00");
-        late_night_text.setText(Integer.toString(preferences.getInt("late_night", 2)) + ":00");
+        showTimes();
 
         background = (ImageView) findViewById(R.id.manual_background);
-        reset = (ImageView) findViewById(R.id.manual_reset);
-
-        reset.setOnClickListener(this);
 
         early_morning = (ImageView) findViewById(R.id.early_morning_image);
         morning = (ImageView) findViewById(R.id.morning_image);
@@ -171,26 +150,6 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.manual_reset:
-                preferences.edit().putInt("early_morning", 5).commit();
-                preferences.edit().putInt("morning", 6).commit();
-                preferences.edit().putInt("late_morning", 8).commit();
-
-                preferences.edit().putInt("early_afternoon", 10).commit();
-                preferences.edit().putInt("afternoon", 12).commit();
-                preferences.edit().putInt("late_afternoon", 14).commit();
-
-                preferences.edit().putInt("early_evening", 17).commit();
-                preferences.edit().putInt("evening", 19).commit();
-                preferences.edit().putInt("late_evening", 20).commit();
-
-                preferences.edit().putInt("early_night", 22).commit();
-                preferences.edit().putInt("night", 0).commit();
-                preferences.edit().putInt("late_night", 2).commit();
-
-                Toast.makeText(getApplicationContext(), "All wallpaper times reset!", Toast.LENGTH_LONG).show();
-                break;
-
 
             case R.id.early_morning_image:
                 builder = new AlertDialog.Builder(this);
@@ -199,7 +158,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("early_morning", 5)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("early_morning", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("early_morning", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -226,7 +194,14 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("morning", 6)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        preferences.edit().putInt("morning", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("morning", 25)) + ":00");
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -253,6 +228,15 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder.setView(input, 60, 0, 60 ,0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                            preferences.edit().putInt("late_morning", 25).commit();
+                            late_morning_text.setText(Integer.toString(preferences.getInt("late_morning", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -278,7 +262,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("early_afternoon", 10)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("early_afternoon", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("early_afternoon", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -303,7 +296,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("afternoon", 12)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("afternoon", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("afternoon", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -328,7 +330,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("late_afternoon", 14)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("late_afternoon", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("late_afternoon", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -353,7 +364,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("early_evening", 17)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("early_evening", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("early_evening", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -378,7 +398,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("evening", 19)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("evening", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("evening", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -403,7 +432,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("late_evening", 20)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("late_evening", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("late_evening", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -428,7 +466,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("early_night", 22)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("early_night", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("early_night", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -453,7 +500,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("night", 0)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("night", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("night", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -478,7 +534,16 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
                 input.setText(Integer.toString(preferences.getInt("late_night", 2)));
                 input.setSelection(input.getText().length());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input, 60, 0, 60 ,0);
+                builder.setView(input, 60, 0, 60, 0);
+                builder.setNeutralButton("Remove", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        preferences.edit().putInt("late_night", 25).commit();
+                        late_morning_text.setText(Integer.toString(preferences.getInt("late_night", 25)) + ":00");
+
+                    }
+                });
                 builder.setNegativeButton("Cancel", null);
                 builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     @Override
@@ -572,6 +637,62 @@ public class BitDayManual extends AppCompatActivity implements View.OnClickListe
         Bitmap resizedBitmap = Bitmap.createBitmap(image, 0, 0, width, height,
                 matrix, false);
         return resizedBitmap;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_bit_day_manual, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.action_reset){
+            reset();
+        }
+
+        return false;
+    }
+
+    public void reset() {
+        preferences.edit().putInt("early_morning", 5).commit();
+        preferences.edit().putInt("morning", 6).commit();
+        preferences.edit().putInt("late_morning", 8).commit();
+
+        preferences.edit().putInt("early_afternoon", 10).commit();
+        preferences.edit().putInt("afternoon", 12).commit();
+        preferences.edit().putInt("late_afternoon", 14).commit();
+
+        preferences.edit().putInt("early_evening", 17).commit();
+        preferences.edit().putInt("evening", 19).commit();
+        preferences.edit().putInt("late_evening", 20).commit();
+
+        preferences.edit().putInt("early_night", 22).commit();
+        preferences.edit().putInt("night", 0).commit();
+        preferences.edit().putInt("late_night", 2).commit();
+
+        showTimes();
+
+        Toast.makeText(getApplicationContext(), "All wallpaper times reset!", Toast.LENGTH_LONG).show();
+    }
+
+    public void showTimes() {
+        early_morning_text.setText(Integer.toString(preferences.getInt("early_morning", 5)) + ":00");
+        morning_text.setText(Integer.toString(preferences.getInt("morning", 6)) + ":00");
+        late_morning_text.setText(Integer.toString(preferences.getInt("late_morning", 8)) + ":00");
+
+        early_afternoon_text.setText(Integer.toString(preferences.getInt("early_afternoon", 10)) + ":00");
+        afternoon_text.setText(Integer.toString(preferences.getInt("afternoon", 12)) + ":00");
+        late_afternoon_text.setText(Integer.toString(preferences.getInt("late_afternoon", 14)) + ":00");
+
+        early_evening_text.setText(Integer.toString(preferences.getInt("early_evening", 17)) + ":00");
+        evening_text.setText(Integer.toString(preferences.getInt("evening", 19)) + ":00");
+        late_evening_text.setText(Integer.toString(preferences.getInt("late_evening", 20)) + ":00");
+
+        early_night_text.setText(Integer.toString(preferences.getInt("early_night", 22)) + ":00");
+        night_text.setText(Integer.toString(preferences.getInt("night", 0)) + ":00");
+        late_night_text.setText(Integer.toString(preferences.getInt("late_night", 2)) + ":00");
     }
 }
 

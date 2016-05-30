@@ -20,35 +20,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
-
-                <TextView
-                    android:id="@+id/manual_intro"
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_weight="0.5"
-                    android:padding="10dp"
-                    android:text="@string/manual_intro"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:typeface="monospace" />
-
-                <ImageView
-                    android:id="@+id/manual_reset"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.5"
-                    android:adjustViewBounds="false"
-                    android:src="@drawable/ic_settings_backup_restore_white_24dp" />
-
-            </LinearLayout>
-
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -66,6 +37,7 @@
 
                 <TextView
                     android:id="@+id/early_morning_text"
+                    android:typeface="monospace"
                     style="@style/TextViewCustom"
                     />
 
@@ -87,6 +59,7 @@
                 <TextView
                     android:id="@+id/morning_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
 
                 </FrameLayout>
@@ -106,6 +79,7 @@
                 <TextView
                     android:id="@+id/late_morning_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
 
                 </FrameLayout>
@@ -125,6 +99,7 @@
                 <TextView
                     android:id="@+id/early_afternoon_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
 
                 </FrameLayout>
@@ -144,6 +119,7 @@
                 <TextView
                     android:id="@+id/afternoon_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
                 </FrameLayout>
 
@@ -162,6 +138,7 @@
                 <TextView
                     android:id="@+id/late_afternoon_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
                 </FrameLayout>
 
@@ -180,6 +157,7 @@
                 <TextView
                     android:id="@+id/early_evening_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
                 </FrameLayout>
 
@@ -198,6 +176,7 @@
                 <TextView
                     android:id="@+id/evening_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
                 </FrameLayout>
 
@@ -216,6 +195,7 @@
                 <TextView
                     android:id="@+id/late_evening_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
                 </FrameLayout>
 
@@ -233,6 +213,7 @@
                 <TextView
                     android:id="@+id/early_night_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
                 </FrameLayout>
 
@@ -251,6 +232,7 @@
                 <TextView
                     android:id="@+id/night_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
                 </FrameLayout>
 
@@ -269,6 +251,7 @@
                 <TextView
                     android:id="@+id/late_night_text"
                     style="@style/TextViewCustom"
+                    android:typeface="monospace"
                     />
 
                 </FrameLayout>

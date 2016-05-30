@@ -70,10 +70,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         background = (ImageView) findViewById(R.id.background);
         background.setImageResource(BitDayDrawable.get(this));
 
-        colorFadeOut = ObjectAnimator.ofObject(activate_layout, "backgroundColor", new ArgbEvaluator(), getResources().getColor(R.color.blue), getResources().getColor(R.color.lightRed));
+        colorFadeOut = ObjectAnimator.ofObject(activate_layout, "backgroundColor", new ArgbEvaluator(), getResources().getColor(R.color.blue), getResources().getColor(R.color.lightRed_Pressed));
         colorFadeOut.setDuration(500);
 
-        colorFadeIn = ObjectAnimator.ofObject(activate_layout, "backgroundColor", new ArgbEvaluator(), getResources().getColor(R.color.lightRed), getResources().getColor(R.color.blue));
+        colorFadeIn = ObjectAnimator.ofObject(activate_layout, "backgroundColor", new ArgbEvaluator(), getResources().getColor(R.color.lightRed_Pressed), getResources().getColor(R.color.blue));
         colorFadeIn.setDuration(500);
 
         if (preferences.getBoolean("isRunning", false)) {
@@ -81,7 +81,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             activate_layout.setBackgroundColor(getResources().getColor(R.color.blue));
         } else {
             activateButton.setText("Disabled");
-            activate_layout.setBackgroundColor(getResources().getColor(R.color.lightRed));
+            activate_layout.setBackgroundColor(getResources().getColor(R.color.lightRed_Pressed));
         }
 
         //background.startAnimation(animation);

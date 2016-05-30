@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="android:colorControlHighlight">#F44336</item>
+
     </style>
 
     <style name="AlertDialogCustom" parent="@android:style/Theme.Dialog">
@@ -20,15 +21,15 @@
 
     </style>
 
-    <style name="TextViewCustom" parent="TextAppearance.AppCompat.Medium">
+    <style name="TextViewCustom" parent="Base.Theme.AppCompat">
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:textSize">40sp</item>
         <item name="android:textColor">@color/light_black</item>
-        <item name="android:layout_width">150dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/transparent_white</item>
+        <item name="android:layout_width">170dp</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="android:background">@color/ultraUltraLightGray</item>
     </style>
 
 </resources>

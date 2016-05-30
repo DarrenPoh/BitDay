@@ -19,7 +19,7 @@
     <color name="mediumGray">#333333</color>
     <color name="darkGray">#4F4F4F</color>
     <color name="ultraDarkGray">#222222</color>
-    <color name="lightRed">#90FA9191</color>
+    <color name="lightRed">#FA9191</color>
     <color name="lightRed_Pressed">#dc8080</color>
     <color name="lightRed_Disabled">#eaeaea</color>
     <color name="lightBlue">#ff0ba9fa</color>
